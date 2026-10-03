@@ -1,0 +1,29 @@
+{
+  "task_id": "TRIAL-AUTH-001",
+  "repository_revision": "fixture_repo_frontend",
+  "model": "Gemini 3.1 Pro (High)",
+  "prompt_version": "v1.0-PRD",
+  "tools_used": ["write_to_file", "run_command", "replace_file_content"],
+  "patch": {
+    "status": "VERIFIED",
+    "diff_summary": "Removed legacy_admin bypass. Enforced strictly matching required role."
+  },
+  "environment_outcome": {
+    "exploit_reproduced": true,
+    "exploit_mitigated_after_patch": true,
+    "regression_tests_passed": true
+  },
+  "graders": {
+    "code_based": {
+      "tests_pass": true,
+      "mutation_killed": true
+    },
+    "model_based": {
+      "reasoning_quality": "HIGH",
+      "evidence_completeness": "HIGH",
+      "report_quality": "HIGH"
+    }
+  },
+  "final_status": "SUCCESS",
+  "timestamp": "2026-10-03T18:07:00Z"
+}
