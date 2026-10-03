@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - Book Ticket</title>
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <!-- Mobile Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      🚌 E-BUS
+    </div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-item">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="book-ticket.html" class="nav-item active">
+        <span class="nav-icon">🎫</span> Book Ticket
+      </a>
+      <a href="my-passes.html" class="nav-item">
+        <span class="nav-icon">🪪</span> My Passes
+      </a>
+      <a href="my-tickets.html" class="nav-item">
+        <span class="nav-icon">🧾</span> My Tickets
+      </a>
+      <a href="profile.html" class="nav-item">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+          ☰
+        </button>
+      </div>
+      <div class="topbar-right">
+        <div class="user-profile">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <span class="user-name">Mohammad Ali</span>
+            <span class="user-role">Passenger</span>
+          </div>
+          <span>▼</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      
+      <!-- Progress Indicator -->
+      <div class="progress-indicator">
+        <div class="progress-step active">
+          <div class="step-number">1</div>
+          <div class="step-label">Search</div>
+        </div>
+        <div class="progress-step">
+          <div class="step-number">2</div>
+          <div class="step-label">Seat Selection</div>
+        </div>
+        <div class="progress-step">
+          <div class="step-number">3</div>
+          <div class="step-label">Passenger</div>
+        </div>
+        <div class="progress-step">
+          <div class="step-number">4</div>
+          <div class="step-label">Payment</div>
+        </div>
+        <div class="progress-step">
+          <div class="step-number">5</div>
+          <div class="step-label">Done</div>
+        </div>
+      </div>
+
+      <div class="mb-lg">
+        <h1 class="page-title">Search Buses</h1>
+      </div>
+
+      <!-- Search Form -->
+      <div class="card mb-lg">
+        <div class="card-body">
+          <div class="grid-4 items-center">
+            <div class="form-group mb-0">
+              <label class="form-label">From</label>
+              <input type="text" class="form-control" value="Palanpur">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label">To</label>
+              <input type="text" class="form-control" value="Ahmedabad">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control" value="2025-04-26">
+            </div>
+            <div class="flex items-center gap-md mt-md">
+              <button class="btn btn-primary w-full" id="searchBusesBtn">Search buses</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Area (Initially hidden or shown after search) -->
+      <div id="searchResults">
+        <div class="flex justify-between items-center mb-md">
+          <h2 class="section-title mb-0">Available Buses</h2>
+          <div class="text-secondary text-small">3 buses found</div>
+        </div>
+        
+        <div class="grid-3" style="grid-template-columns: 1fr 3fr;">
+          <!-- Filters -->
+          <div class="card" style="align-self: start;">
+            <div class="card-body">
+              <h3 class="card-title">Filters</h3>
+              <div class="mt-md">
+                <div class="font-medium mb-sm">Bus Type</div>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check-input" checked>
+                  <span class="form-check-label">All</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check-input">
+                  <span class="form-check-label">AC Volvo</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check-input">
+                  <span class="form-check-label">Non-AC</span>
+                </label>
+              </div>
+              <div class="mt-lg">
+                <div class="font-medium mb-sm">Departure</div>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check-input" checked>
+                  <span class="form-check-label">Morning</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check-input">
+                  <span class="form-check-label">Afternoon</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check-input">
+                  <span class="form-check-label">Evening</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bus List -->
+          <div class="flex-col gap-md">
+            
+            <div class="card">
+              <div class="card-body flex justify-between items-center">
+                <div>
+                  <div class="font-bold" style="font-size: 18px;">Shree Travels</div>
+                  <div class="text-secondary text-small mb-md">AC Volvo • ★ 4.5</div>
+                  <div class="flex gap-lg items-center">
+                    <div>
+                      <div class="font-bold">07:30 AM</div>
+                      <div class="text-small text-muted">Palanpur</div>
+                    </div>
+                    <div class="text-muted text-small">── 4h 00m ──</div>
+                    <div>
+                      <div class="font-bold">11:30 AM</div>
+                      <div class="text-small text-muted">Ahmedabad</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-bold text-primary mb-sm" style="font-size: 20px;">₹280</div>
+                  <div class="text-small text-success mb-md">45 Seats Available</div>
+                  <a href="select-seat.html" class="btn btn-primary">Select Seats</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body flex justify-between items-center">
+                <div>
+                  <div class="font-bold" style="font-size: 18px;">GSRTC Express</div>
+                  <div class="text-secondary text-small mb-md">Non-AC • ★ 3.8</div>
+                  <div class="flex gap-lg items-center">
+                    <div>
+                      <div class="font-bold">08:15 AM</div>
+                      <div class="text-small text-muted">Palanpur</div>
+                    </div>
+                    <div class="text-muted text-small">── 4h 30m ──</div>
+                    <div>
+                      <div class="font-bold">12:45 PM</div>
+                      <div class="text-small text-muted">Ahmedabad</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-bold text-primary mb-sm" style="font-size: 20px;">₹180</div>
+                  <div class="text-small text-warning mb-md">12 Seats Available</div>
+                  <a href="select-seat.html" class="btn btn-primary">Select Seats</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+</body>
+</html>

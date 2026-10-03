@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - Reports</title>
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">🚌 E-BUS</div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item">
+        <span class="nav-icon">📊</span> Overview
+      </a>
+      <a href="routes.html" class="nav-item">
+        <span class="nav-icon">🛣️</span> Routes
+      </a>
+      <a href="buses.html" class="nav-item">
+        <span class="nav-icon">🚌</span> Buses
+      </a>
+      <a href="passes.html" class="nav-item">
+        <span class="nav-icon">🪪</span> Passes
+      </a>
+      <a href="renewals.html" class="nav-item">
+        <span class="nav-icon">🔄</span> Renewals
+      </a>
+      <a href="bookings.html" class="nav-item">
+        <span class="nav-icon">🎫</span> Bookings
+      </a>
+      <a href="users.html" class="nav-item">
+        <span class="nav-icon">👥</span> Users
+      </a>
+      <a href="reports.html" class="nav-item active">
+        <span class="nav-icon">📈</span> Reports
+      </a>
+      <a href="settings.html" class="nav-item">
+        <span class="nav-icon">⚙️</span> Settings
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+      </div>
+      <div class="topbar-right">
+        <div class="user-profile">
+          <div class="user-avatar" style="background-color: var(--navy); color: white;">AD</div>
+          <div class="user-info">
+            <span class="user-name">Admin</span>
+            <span class="user-role">Administrator</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      
+      <div class="flex justify-between items-center mb-lg">
+        <h1 class="page-title mb-0">Financial Reports</h1>
+        <button class="btn btn-outline">Export to CSV</button>
+      </div>
+
+      <div class="card mb-lg">
+        <div class="card-body">
+          <div class="grid-4">
+            <div class="form-group mb-0">
+              <label class="form-label">Report Type</label>
+              <select class="form-control form-select">
+                <option>Revenue by Date</option>
+                <option>Revenue by Route</option>
+                <option>Passes Issued</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label">Start Date</label>
+              <input type="date" class="form-control" value="2025-04-01">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label">End Date</label>
+              <input type="date" class="form-control" value="2025-04-26">
+            </div>
+            <div class="flex items-end">
+              <button class="btn btn-primary w-full">Generate Report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title mb-0">Results</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Bookings Count</th>
+                <th>Ticket Revenue</th>
+                <th>Pass Revenue</th>
+                <th>Total Revenue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>26 Apr 2025</td>
+                <td>342</td>
+                <td>₹95,760</td>
+                <td>₹12,400</td>
+                <td class="font-bold text-success">₹108,160</td>
+              </tr>
+              <tr>
+                <td>25 Apr 2025</td>
+                <td>289</td>
+                <td>₹80,920</td>
+                <td>₹9,800</td>
+                <td class="font-bold text-success">₹90,720</td>
+              </tr>
+              <tr>
+                <td>24 Apr 2025</td>
+                <td>310</td>
+                <td>₹86,800</td>
+                <td>₹15,000</td>
+                <td class="font-bold text-success">₹101,800</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4" class="text-right font-bold">Grand Total (April):</td>
+                <td class="font-bold text-primary">₹300,680</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - Application Status</title>
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">🚌 E-BUS</div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-item">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="book-ticket.html" class="nav-item">
+        <span class="nav-icon">🎫</span> Book Ticket
+      </a>
+      <a href="my-passes.html" class="nav-item active">
+        <span class="nav-icon">🪪</span> My Passes
+      </a>
+      <a href="my-tickets.html" class="nav-item">
+        <span class="nav-icon">🧾</span> My Tickets
+      </a>
+      <a href="profile.html" class="nav-item">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+      </div>
+      <div class="topbar-right">
+        <div class="user-profile">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <span class="user-name">Mohammad Ali</span>
+            <span class="user-role">Passenger</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      
+      <div class="mb-lg">
+        <a href="my-passes.html" class="text-primary text-small mb-sm inline-block">← Back to My Passes</a>
+        <h1 class="page-title">Application Status</h1>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 1fr 1fr;">
+        
+        <!-- Application Details -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Application #APP-98421</h3>
+          </div>
+          <div class="card-body">
+            
+            <div class="grid-2 mb-md">
+              <div>
+                <div class="text-small text-secondary">Pass Type</div>
+                <div class="font-bold">Student Pass</div>
+              </div>
+              <div>
+                <div class="text-small text-secondary">Duration</div>
+                <div class="font-bold">1 Month</div>
+              </div>
+            </div>
+
+            <div class="grid-2 mb-md">
+              <div>
+                <div class="text-small text-secondary">Route</div>
+                <div class="font-bold">Palanpur ⇄ Ahmedabad</div>
+              </div>
+              <div>
+                <div class="text-small text-secondary">Applied On</div>
+                <div class="font-bold">15 May 2025</div>
+              </div>
+            </div>
+
+            <div class="grid-2 mb-lg">
+              <div>
+                <div class="text-small text-secondary">Amount</div>
+                <div class="font-bold">₹3,285</div>
+              </div>
+              <div>
+                <div class="text-small text-secondary">Status</div>
+                <div class="font-bold text-warning">Under Review</div>
+              </div>
+            </div>
+
+            <!-- If Rejected show this: -->
+            <!--
+            <div class="bg-light p-md mb-md" style="background-color: var(--danger-light); border-left: 4px solid var(--danger); border-radius: var(--radius-sm);">
+              <div class="font-bold text-danger mb-xs">Application Rejected</div>
+              <div class="text-small text-danger">The uploaded student ID is expired. Please apply again with a valid ID.</div>
+            </div>
+            -->
+            
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Timeline</h3>
+          </div>
+          <div class="card-body">
+            
+            <div class="timeline">
+              <div class="timeline-item completed">
+                <div class="timeline-marker"></div>
+                <div class="font-bold">Submitted</div>
+                <div class="text-small text-secondary">15 May 2025, 10:30 AM</div>
+              </div>
+              
+              <div class="timeline-item active">
+                <div class="timeline-marker"></div>
+                <div class="font-bold">Under Review</div>
+                <div class="text-small text-secondary">Admin is reviewing your documents.</div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="text-muted">Approved</div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="text-muted">Payment Pending</div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="text-muted">Active</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - Passenger & Payment</title>
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">🚌 E-BUS</div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-item">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="book-ticket.html" class="nav-item active">
+        <span class="nav-icon">🎫</span> Book Ticket
+      </a>
+      <a href="my-passes.html" class="nav-item">
+        <span class="nav-icon">🪪</span> My Passes
+      </a>
+      <a href="my-tickets.html" class="nav-item">
+        <span class="nav-icon">🧾</span> My Tickets
+      </a>
+      <a href="profile.html" class="nav-item">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+      </div>
+      <div class="topbar-right">
+        <div class="user-profile">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <span class="user-name">Mohammad Ali</span>
+            <span class="user-role">Passenger</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      
+      <div class="progress-indicator">
+        <div class="progress-step completed">
+          <div class="step-number">✓</div>
+          <div class="step-label">Search</div>
+        </div>
+        <div class="progress-step completed">
+          <div class="step-number">✓</div>
+          <div class="step-label">Seat Selection</div>
+        </div>
+        <div class="progress-step active">
+          <div class="step-number">3</div>
+          <div class="step-label">Passenger & Payment</div>
+        </div>
+        <div class="progress-step">
+          <div class="step-number">4</div>
+          <div class="step-label">Done</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 2fr 1fr;">
+        
+        <div class="flex-col gap-lg">
+          <!-- Passenger Details -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title mb-0">Passenger Details</h3>
+            </div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" value="Mohammad Ali">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Age</label>
+                  <input type="number" class="form-control" value="28">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Gender</label>
+                  <select class="form-control form-select">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" value="m.ali@example.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" value="+91 9876543210">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Details -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title mb-0">Payment Method</h3>
+            </div>
+            <div class="card-body">
+              
+              <div class="flex gap-md mb-lg">
+                <label class="form-check p-md border rounded w-full flex justify-center items-center" style="border: 1px solid var(--primary); background-color: var(--primary-light); border-radius: var(--radius-md);">
+                  <input type="radio" name="payment" class="form-check-input" checked>
+                  <span class="font-medium ml-sm">UPI / QR</span>
+                </label>
+                <label class="form-check p-md border rounded w-full flex justify-center items-center" style="border: 1px solid var(--border); border-radius: var(--radius-md);">
+                  <input type="radio" name="payment" class="form-check-input">
+                  <span class="font-medium ml-sm">Card</span>
+                </label>
+              </div>
+
+              <div class="text-center p-xl bg-light" style="background-color: #f8fafc; border-radius: var(--radius-md); border: 1px dashed var(--border);">
+                <div class="text-muted mb-sm">Scan QR code to pay</div>
+                <div style="width: 150px; height: 150px; background-color: white; margin: 0 auto; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border);">
+                  [ QR Code ]
+                </div>
+                <div class="mt-md font-bold text-primary">₹280</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="card" style="align-self: start;">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Order Summary</h3>
+          </div>
+          <div class="card-body">
+            
+            <div class="font-bold mb-xs">Shree Travels - AC Volvo</div>
+            <div class="text-small text-secondary mb-md">Palanpur → Ahmedabad</div>
+            <div class="text-small text-secondary mb-lg">26 Apr 2025, 07:30 AM</div>
+
+            <div class="flex justify-between mb-sm">
+              <span class="text-secondary text-small">Seat(s)</span>
+              <span class="font-bold">12A</span>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: var(--space-md) 0;">
+
+            <div class="flex justify-between mb-sm text-secondary">
+              <span>Base Fare</span>
+              <span>₹260</span>
+            </div>
+            <div class="flex justify-between mb-md text-secondary">
+              <span>Service Fee</span>
+              <span>₹20</span>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: var(--space-md) 0;">
+
+            <div class="flex justify-between items-center mb-lg">
+              <span class="font-bold">Total Pay</span>
+              <span class="fare-total text-primary">₹280</span>
+            </div>
+
+            <a href="ticket.html" class="btn btn-primary w-full" id="payBtn">Pay Securely</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+</body>
+</html>

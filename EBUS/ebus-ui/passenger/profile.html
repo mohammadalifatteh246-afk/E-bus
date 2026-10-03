@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - My Profile</title>
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">🚌 E-BUS</div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-item">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="book-ticket.html" class="nav-item">
+        <span class="nav-icon">🎫</span> Book Ticket
+      </a>
+      <a href="my-passes.html" class="nav-item">
+        <span class="nav-icon">🪪</span> My Passes
+      </a>
+      <a href="my-tickets.html" class="nav-item">
+        <span class="nav-icon">🧾</span> My Tickets
+      </a>
+      <a href="profile.html" class="nav-item active">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+      </div>
+      <div class="topbar-right">
+        <div class="user-profile">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <span class="user-name">Mohammad Ali</span>
+            <span class="user-role">Passenger</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      
+      <div class="flex justify-between items-center mb-lg">
+        <h1 class="page-title mb-0">My Profile</h1>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 1fr 2fr;">
+        
+        <!-- Profile Card -->
+        <div class="card flex-col items-center p-xl text-center" style="align-self: start;">
+          <div class="user-avatar mb-md" style="width: 100px; height: 100px; font-size: 32px;">MA</div>
+          <h2 class="font-bold mb-xs" style="font-size: 24px;">Mohammad Ali</h2>
+          <div class="text-secondary mb-lg">m.ali@example.com</div>
+          <a href="update-profile.html" class="btn btn-outline w-full">Edit Profile</a>
+        </div>
+
+        <!-- Details -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Personal Information</h3>
+          </div>
+          <div class="card-body">
+            
+            <div class="grid-2 mb-lg">
+              <div>
+                <div class="text-small text-secondary mb-xs">Full Name</div>
+                <div class="font-medium">Mohammad Ali</div>
+              </div>
+              <div>
+                <div class="text-small text-secondary mb-xs">Age & Gender</div>
+                <div class="font-medium">28, Male</div>
+              </div>
+            </div>
+
+            <div class="grid-2 mb-lg">
+              <div>
+                <div class="text-small text-secondary mb-xs">Phone Number</div>
+                <div class="font-medium">+91 9876543210</div>
+              </div>
+              <div>
+                <div class="text-small text-secondary mb-xs">Joined On</div>
+                <div class="font-medium">10 Jan 2025</div>
+              </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: var(--space-lg) 0;">
+            
+            <h3 class="card-title mb-md">Account Actions</h3>
+            <div class="flex gap-sm">
+              <button class="btn btn-secondary">Change Password</button>
+              <button class="btn btn-danger btn-outline">Logout</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+</body>
+</html>

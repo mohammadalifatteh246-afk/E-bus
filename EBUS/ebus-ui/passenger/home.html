@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - Passenger Dashboard</title>
+  
+  <!-- CSS Foundations -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <!-- Mobile Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      🚌 E-BUS
+    </div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-item active">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="book-ticket.html" class="nav-item">
+        <span class="nav-icon">🎫</span> Book Ticket
+      </a>
+      <a href="my-passes.html" class="nav-item">
+        <span class="nav-icon">🪪</span> My Passes
+      </a>
+      <a href="my-tickets.html" class="nav-item">
+        <span class="nav-icon">🧾</span> My Tickets
+      </a>
+      <a href="profile.html" class="nav-item">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+          ☰
+        </button>
+        <div class="topbar-search">
+          <input type="text" class="form-control" placeholder="🔍 Search routes, cities...">
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-actions">
+          <button class="topbar-action-btn">🔔</button>
+          <button class="topbar-action-btn">❓</button>
+        </div>
+        <div class="user-profile">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <span class="user-name">Mohammad Ali</span>
+            <span class="user-role">Passenger</span>
+          </div>
+          <span>▼</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      <div class="mb-lg">
+        <h1 class="page-title mb-sm">Good afternoon, Mohammad Ali</h1>
+        <p>Travel safe. Explore more.</p>
+      </div>
+
+      <!-- Plan your journey -->
+      <div class="card mb-lg">
+        <div class="card-header">
+          <h3 class="card-title mb-0">Plan your journey</h3>
+        </div>
+        <div class="card-body">
+          <div class="grid-4 items-center">
+            <div class="form-group mb-0">
+              <label class="form-label">From</label>
+              <input type="text" class="form-control" value="Palanpur">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label">To</label>
+              <input type="text" class="form-control" value="Ahmedabad">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label">Date</label>
+              <input type="text" class="form-control" value="26 Apr 2025">
+            </div>
+            <div class="flex items-center gap-md mt-md">
+              <button class="btn btn-primary w-full">Search buses</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Cards -->
+      <div class="grid-3 mb-lg">
+        
+        <!-- Active Pass -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Active Pass</h3>
+            <span class="badge badge-active">Active</span>
+          </div>
+          <div class="card-body">
+            <div class="font-bold mb-sm">Student Pass</div>
+            <div class="text-secondary mb-sm">Palanpur → Ahmedabad</div>
+            <div class="text-small text-muted mb-md">Valid till 30 Nov 2025</div>
+            <button class="btn btn-outline btn-sm w-full">Download E-Pass</button>
+          </div>
+        </div>
+
+        <!-- Current Ticket -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Current Ticket</h3>
+            <span class="badge badge-pending">Upcoming</span>
+          </div>
+          <div class="card-body">
+            <div class="font-bold mb-sm">Palanpur → Ahmedabad</div>
+            <div class="text-secondary mb-sm">26 Apr 2025, 07:30 AM</div>
+            <div class="text-small mb-md flex justify-between">
+              <span>Seat: <span class="font-bold">12A</span></span>
+              <span>QR 📱</span>
+            </div>
+            <button class="btn btn-primary btn-sm w-full">View Ticket</button>
+          </div>
+        </div>
+
+        <!-- Route Preview -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Route Preview</h3>
+          </div>
+          <div class="card-body flex items-center justify-center bg-light" style="min-height: 120px; background-color: #e5eaf0; border-radius: var(--radius-sm);">
+            <div class="text-muted flex-col items-center">
+              <span>🗺️</span>
+              <span class="text-small mt-sm">Map Placeholder</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Recent Bookings -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title mb-0">Recent Bookings</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Route</th>
+                <th>Bus Type</th>
+                <th>Seat</th>
+                <th>Fare</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>22 Apr</td>
+                <td>Palanpur → Ahmedabad</td>
+                <td>AC Volvo</td>
+                <td>12A</td>
+                <td>₹280</td>
+                <td><span class="badge badge-success">Completed</span></td>
+              </tr>
+              <tr>
+                <td>15 Apr</td>
+                <td>Ahmedabad → Mehsana</td>
+                <td>Non-AC</td>
+                <td>8C</td>
+                <td>₹180</td>
+                <td><span class="badge badge-success">Completed</span></td>
+              </tr>
+              <tr>
+                <td>08 Apr</td>
+                <td>Palanpur → Ahmedabad</td>
+                <td>Express</td>
+                <td>14B</td>
+                <td>₹260</td>
+                <td><span class="badge badge-success">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- Scripts -->
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/toast.js"></script>
+</body>
+</html>

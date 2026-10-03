@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - My Tickets</title>
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">🚌 E-BUS</div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-item">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="book-ticket.html" class="nav-item">
+        <span class="nav-icon">🎫</span> Book Ticket
+      </a>
+      <a href="my-passes.html" class="nav-item">
+        <span class="nav-icon">🪪</span> My Passes
+      </a>
+      <a href="my-tickets.html" class="nav-item active">
+        <span class="nav-icon">🧾</span> My Tickets
+      </a>
+      <a href="profile.html" class="nav-item">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+      </div>
+      <div class="topbar-right">
+        <div class="user-profile">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <span class="user-name">Mohammad Ali</span>
+            <span class="user-role">Passenger</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      
+      <div class="flex justify-between items-center mb-lg">
+        <h1 class="page-title mb-0">My Tickets</h1>
+        <a href="book-ticket.html" class="btn btn-primary">Book New Ticket</a>
+      </div>
+
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Date</th>
+                <th>Route</th>
+                <th>Bus Type</th>
+                <th>Seat</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium">EB-9847291</td>
+                <td>26 Apr 2025</td>
+                <td>Palanpur → Ahmedabad</td>
+                <td>AC Volvo</td>
+                <td>12A</td>
+                <td><span class="badge badge-success">Upcoming</span></td>
+                <td><a href="ticket.html" class="btn btn-outline btn-sm">View Ticket</a></td>
+              </tr>
+              <tr>
+                <td class="font-medium">EB-9846102</td>
+                <td>15 Apr 2025</td>
+                <td>Ahmedabad → Surat</td>
+                <td>Express</td>
+                <td>4C</td>
+                <td><span class="badge badge-neutral">Completed</span></td>
+                <td><button class="btn btn-secondary btn-sm" disabled>Expired</button></td>
+              </tr>
+              <tr>
+                <td class="font-medium">EB-9845011</td>
+                <td>02 Apr 2025</td>
+                <td>Palanpur → Mehsana</td>
+                <td>Non-AC</td>
+                <td>18B</td>
+                <td><span class="badge badge-neutral">Completed</span></td>
+                <td><button class="btn btn-secondary btn-sm" disabled>Expired</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+</body>
+</html>

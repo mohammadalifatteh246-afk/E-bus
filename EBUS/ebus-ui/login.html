@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - Login</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+</head>
+<body style="background-color: var(--bg); display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+
+  <div class="card p-xl" style="max-width: 400px; width: 100%; margin: var(--space-xl);">
+    <div class="text-center mb-lg">
+      <div style="font-size: 32px; margin-bottom: var(--space-sm);">🚌</div>
+      <h2 class="font-bold mb-xs" style="font-size: 24px;">Sign In</h2>
+      <p class="text-secondary text-small">Welcome back to E-BUS</p>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">Email Address</label>
+      <input type="email" class="form-control" placeholder="Enter email">
+    </div>
+    
+    <div class="form-group mb-lg">
+      <div class="flex justify-between items-center mb-xs">
+        <label class="form-label mb-0">Password</label>
+        <a href="#" class="text-primary text-small">Forgot?</a>
+      </div>
+      <input type="password" class="form-control" placeholder="Enter password">
+    </div>
+
+    <button class="btn btn-primary w-full mb-md" onclick="window.location.href='passenger/home.html'" style="padding: 12px; font-size: 16px;">Log In</button>
+    
+    <div class="text-center text-small">
+      <span class="text-secondary">Don't have an account?</span>
+      <a href="register.html" class="text-primary font-medium ml-xs">Sign up</a>
+    </div>
+  </div>
+
+</body>
+</html>

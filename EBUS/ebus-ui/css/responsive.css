@@ -1,0 +1,66 @@
+/* Responsive Breakpoints */
+
+/* Tablet (<1200px) */
+@media (max-width: 1199px) {
+  .grid-4, .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile/Tablet Portrait (<992px) */
+@media (max-width: 991px) {
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 200;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-overlay.open {
+    display: block;
+    opacity: 1;
+  }
+  
+  .topbar {
+    padding: 0 var(--space-md);
+  }
+  
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+/* Mobile (<768px) */
+@media (max-width: 767px) {
+  .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-content {
+    padding: var(--space-md);
+  }
+  
+  .topbar-search {
+    display: none; /* Hide search on small mobile, maybe icon only */
+  }
+  
+  .card-header, .card-body, .card-footer {
+    padding: var(--space-md);
+  }
+  
+  .modal {
+    margin: var(--space-sm);
+    height: auto;
+    max-height: calc(100vh - var(--space-xl));
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-body {
+    overflow-y: auto;
+  }
+}

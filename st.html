@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Pass Application Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #f0f4ff, #eaf7ff);
+            font-family: 'Noto Sans Gujarati', sans-serif;
+        }
+        .form-container {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0px 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #0d6efd;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .section-header i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #0d6efd;
+        }
+        .form-control, .form-select, textarea {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            transition: all 0.2s ease;
+        }
+        .form-control:focus, .form-select:focus, textarea:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 8px rgba(13,110,253,0.3);
+        }
+        label {
+            font-weight: 500;
+        }
+        .btn-primary {
+            background: #0d6efd;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            background: #084298;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-4">
+    <h2 class="mb-4 text-center text-primary fw-bold">🚌 વિદ્યાર્થી બસ પાસ અરજી ફોર્મ</h2>
+    <form action="submit_pass.php" method="post">
+
+        <!-- Personal Details -->
+        <div class="form-container">
+            <div class="section-header"><i class="bi bi-person"></i> વ્યક્તિગત માહિતી (Personal Details)</div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label>CTS Number (સીટીએસ નંબર) *</label>
+                    <input type="text" name="cts_number" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label>I-Card Number (આઇ-કાર્ડ નંબર)</label>
+                    <input type="text" name="icard_number" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label>Full Name (પૂર્ણ નામ) *</label>
+                    <input type="text" name="full_name" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label>Gender (લિંગ) *</label>
+                    <select name="gender" class="form-select" required>
+                        <option value="">-- Select --</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Is Rural? (ગ્રામ્ય વિસ્તાર?)</label>
+                    <select name="is_rural" class="form-select">
+                        <option value="">-- Select --</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address Details -->
+        <div class="form-container">
+            <div class="section-header"><i class="bi bi-geo-alt"></i> સરનામું (Address Details)</div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label>Permanent Address (કાયમી સરનામું) *</label>
+                    <textarea name="permanent_address" class="form-control" rows="2" required></textarea>
+                </div>
+                <div class="col-md-6">
+                    <label>Same as Permanent?</label><br>
+                    <input type="checkbox" id="sameAddress" class="form-check-input">
+                </div>
+                <div class="col-md-6">
+                    <label>Current Address (હાલનું સરનામું) *</label>
+                    <textarea name="current_address" id="currentAddress" class="form-control" rows="2" required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Route Details -->
+        <div class="form-container">
+            <div class="section-header"><i class="bi bi-signpost"></i> માર્ગ વિગતો (Route Details)</div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label>From (ચઢવાનું સ્થળ) *</label>
+                    <input type="text" name="from_location" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label>To (ઉતરવાનું સ્થળ) *</label>
+                    <input type="text" name="to_location" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label>Route (રૂટ) *</label>
+                    <select name="route" class="form-select" required>
+                        <option value="">-- Select --</option>
+                        <option>Route 1</option>
+                        <option>Route 2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="form-container">
+            <div class="section-header"><i class="bi bi-telephone"></i> સંપર્ક માહિતી (Contact Details)</div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label>Mobile No *</label>
+                    <input type="text" name="mobile" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Email *</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">સબમિટ કરો (Submit)</button>
+        </div>
+
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.js"></script>
+<script>
+    document.getElementById('sameAddress').addEventListener('change', function () {
+        const permanent = document.querySelector('[name="permanent_address"]').value;
+        document.getElementById('currentAddress').value = this.checked ? permanent : '';
+    });
+</script>
+
+</body>
+</html>

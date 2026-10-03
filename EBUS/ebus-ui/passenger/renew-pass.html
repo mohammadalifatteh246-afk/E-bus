@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BUS - Renew Pass</title>
+  
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/tables.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">🚌 E-BUS</div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="nav-item">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="book-ticket.html" class="nav-item">
+        <span class="nav-icon">🎫</span> Book Ticket
+      </a>
+      <a href="my-passes.html" class="nav-item active">
+        <span class="nav-icon">🪪</span> My Passes
+      </a>
+      <a href="my-tickets.html" class="nav-item">
+        <span class="nav-icon">🧾</span> My Tickets
+      </a>
+      <a href="profile.html" class="nav-item">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+      </div>
+      <div class="topbar-right">
+        <div class="user-profile">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <span class="user-name">Mohammad Ali</span>
+            <span class="user-role">Passenger</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      
+      <div class="mb-lg">
+        <a href="my-passes.html" class="text-primary text-small mb-sm inline-block">← Back to My Passes</a>
+        <h1 class="page-title">Renew Pass</h1>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 2fr 1fr;">
+        
+        <!-- Application Form -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Renewal Details</h3>
+          </div>
+          <div class="card-body">
+            
+            <div class="bg-light p-md mb-lg" style="background-color: #f8fafc; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <div class="text-small text-secondary mb-xs">Renewing Pass</div>
+              <div class="font-bold mb-xs" style="font-size: 18px;">STU-98421</div>
+              <div>Student Pass • Palanpur ⇄ Ahmedabad</div>
+              <div class="text-small text-warning mt-sm">Expires on 30 Nov 2025</div>
+            </div>
+
+            <!-- Hidden Inputs to act like they are selected for the pass.js calculator -->
+            <div style="display: none;">
+              <input type="radio" name="passType" value="student" checked>
+              <input type="number" id="passDistance" value="145">
+            </div>
+
+            <div class="grid-2 mb-lg">
+              <div class="form-group mb-0">
+                <label class="form-label">Extension Duration</label>
+                <select id="passDuration" class="form-control form-select">
+                  <option value="1">1 Month (+ ₹3,282)</option>
+                  <option value="3">3 Months (+ ₹9,807)</option>
+                  <option value="6">6 Months (+ ₹19,595)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group mb-0">
+              <label class="form-label">Update Student ID (Optional)</label>
+              <input type="file" class="form-control" accept="image/*, .pdf">
+              <div class="form-text">If your previous ID is still valid, you can leave this blank.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Fare Breakdown -->
+        <div class="card" style="align-self: start;">
+          <div class="card-header">
+            <h3 class="card-title mb-0">Renewal Summary</h3>
+          </div>
+          <div class="card-body">
+            
+            <div class="flex justify-between mb-sm text-secondary">
+              <span>Base Fare</span>
+              <span id="passBaseFare">₹6,525</span>
+            </div>
+            <div class="flex justify-between mb-sm text-secondary">
+              <span>Processing Fee</span>
+              <span id="passFee">₹20</span>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: var(--space-md) 0;">
+            
+            <div class="flex justify-between mb-md font-medium">
+              <span>Total Before Discount</span>
+              <span id="passSubtotal">₹6,545</span>
+            </div>
+
+            <div id="passDiscountRow" class="flex justify-between mb-md text-success">
+              <span>Student Discount (50%)</span>
+              <span id="passDiscount">- ₹3,273</span>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: var(--space-md) 0;">
+
+            <div class="flex justify-between items-center mb-lg">
+              <span class="font-bold">Total Payable</span>
+              <span class="fare-total text-primary" id="passTotal">₹3,272</span>
+            </div>
+
+            <button class="btn btn-primary w-full" onclick="window.location.href='payment.html'">Proceed to Pay</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/sidebar.js"></script>
+<script src="../js/pass.js"></script>
+</body>
+</html>
